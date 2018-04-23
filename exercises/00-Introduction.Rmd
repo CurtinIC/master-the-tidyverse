@@ -47,10 +47,21 @@ You can immediately run any function from base R within a notebook, But if you'd
 Do you remember how to run the core tidyverse packages? Load them in the chunk below:
 
 ```{r}
-# I've already installed the tidyverse package(s) on this server
-# So all you need to do is load it
+# If you haven't installed the tidyverse package do so now
+# If you already isntalled it all you need to do is load it
 
 ```
 
 Good job! You'll need to reload your packages every time you begin a new notebook.
+
+```{r}
+# Let's make sure we have all the other packages installed as well
+packages_needed <- c("babynames", "formatR", "gapminder", "hexbin", "mgcv", "maps", "mapproj", "nycflights13", "tidyverse", "viridis")
+packages_to_install <-setdiff(packages_needed,installed.packages())
+if(length(packages_to_install)>0) {
+  install.packages(packages_to_install)
+}
+
+```
+
 
